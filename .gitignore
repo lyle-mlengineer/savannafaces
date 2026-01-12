@@ -6,7 +6,7 @@ __pycache__/
 *.env
 .db.env
 .ml.env
-.web.env
+.web.env 
 
 # C extensions
 *.so
