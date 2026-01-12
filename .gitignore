@@ -3,7 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-.env
+*.env
 .db.env
 .ml.env
 .web.env
