@@ -1,5 +1,6 @@
 # SavannahFaces
 ## Overview
+<img src="./assets/savana.png" class="img-responsive" alt="">
 > This is a web service for generating realistic Kenyan faces. The user creates an account, logs into the account and then is able to generate realistic looking images by prompting our model.
 
 #### Application Demo
