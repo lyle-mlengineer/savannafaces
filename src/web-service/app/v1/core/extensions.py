@@ -3,7 +3,7 @@ from pwdlib import PasswordHash
 
 import logging
 
-from app.core.config import config
+from app.v1.core.config import config
 
 drive = GoogleDrive()
 password_hash = PasswordHash.recommended()

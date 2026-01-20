@@ -6,7 +6,7 @@ import logging
 from app.v1.core.config import config
 from app.v1.core.logging import setup_logging
 
-# from app.main_helpers import setup_app
+from app.v1.main_helpers import setup_app
 
 setup_logging()
 
@@ -32,7 +32,7 @@ app = FastAPI(
     contact={"name": config.APP_CONTACT_NAME}
 )
 
-# setup_app(app)
+setup_app(app)
 
 @app.get(
         "/health", 

@@ -17,10 +17,10 @@ class Config(BaseSettings):
     APP_DESCRIPTION: str = os.environ.get("APP_DESCRIPTION", "This is the API for Savannah Faces Web Service, which provides image generation services.")
     APP_CONTACT_NAME: str = os.environ.get("APP_CONTACT_NAME", "Lyle")
 
-    TEMPLATES_DIR: str = "app/ui/templates"
-    STATIC_DIR: str = "app/ui/static"
+    TEMPLATES_DIR: str = "app/v1/ui/templates"
+    STATIC_DIR: str = "app/v1/ui/static"
 
-    IMAGES_DIR: str = os.environ.get("IMAGES_DIR", "app/data/images")
+    DATA_DIR: str = os.environ.get("DATA_DIR", "app/v1/data/images")
 
     GOOGLE_DRIVE_FOLDER_ID: str = os.environ["GOOGLE_DRIVE_FOLDER_ID"]
     GOOGLE_DRIVE_CREDENTIALS: str = os.environ["GOOGLE_DRIVE_CREDENTIALS"]
