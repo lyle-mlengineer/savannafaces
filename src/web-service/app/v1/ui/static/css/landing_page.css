@@ -148,10 +148,6 @@ img {
   display: grid;
   align-content: center;
   row-gap: 2.5rem;
-  /* box-shadow: 0 4px 12px hsla(38, 69%, 8%, .2); */
-  padding: 2rem;
-  border-radius: 1.5rem;
-  width: 100%;
 }
 
 .home__data {
@@ -163,7 +159,7 @@ img {
   margin: .75rem 0;
 }
 
-.btn {
+.home__button {
   margin-top: 2rem;
   display: inline-block;
   background-color: var(--text-color);
@@ -172,7 +168,6 @@ img {
   border-radius: 3rem;
   transition: .4s;
 }
-
 
 .home__button:hover {
   box-shadow: 0 4px 12px hsla(38, 69%, 8%, .2);
@@ -244,7 +239,6 @@ img {
   .nav__list {
     flex-direction: row;
     column-gap: 3.5rem;
-    align-items: center;
   }
 }
 
