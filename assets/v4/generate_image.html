@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- STYLES CSS -->
+        <link rel="stylesheet" href="css/generate.css">
+
+        <!-- BOX ICONS CSS-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"> 
+        <title>Generate Image</title>
+    </head>
+    <body id="body">
+        <div class="l-navbar" id="navbar">
+            <nav class="nav"> 
+                <div>
+                    <a href="#" class="nav__logo">
+                        <img src="img/logo.svg" alt="" class="nav__logo-icon">
+                        <span class="nav__logo-text">SVF</span>
+                    </a>
+    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+    
+                    <ul class="nav__list">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-grid-alt nav__icon'></i>
+                            <span class="nav__text">Dashboard</span>
+                        </a>
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-image nav__icon' ></i>
+                            <span class="nav__text">Generate</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__text">Account</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bell nav__icon' ></i>
+                            <span class="nav__text">Notifications</span>
+                        </a>                        
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cart nav__icon' ></i>
+                            <span class="nav__text">Buy Credits</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-key nav__icon'></i>
+                            <span class="nav__text">API Keys</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cog nav__icon' ></i>
+                            <span class="nav__text">Settings</span>
+                        </a>                 
+                    </ul>
+                </div>
+                <a href="#" class="nav__link">           
+                    <i class='bx bx-log-out-circle nav__icon'></i>
+                    <span class="nav__text">Log Out</span>
+                </a>
+            </nav>
+        </div>
+        
+        <main>
+            <header>
+                <div class="header__logo">
+                    <i class='bx  bx-menu'></i> 
+                </div>
+
+                <div class="dropdown" id="dropdown-content">
+                    <button class="dropdown__button" id="dropdown-button">
+                    <i class="ri-user-3-line dropdown__icon"></i>
+                    <span class="dropdown__name">My profile</span>
+
+                    <div class="dropdown__icons">
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        <i class="ri-close-line dropdown__close"></i>
+                    </div>
+                    </button>
+
+                    <ul class="dropdown__menu">
+                    <li class="dropdown__item">
+                        <i class='bx bx-user dropdown__icon' ></i>
+                        <span class="dropdown__name">Account</span>
+                    </li>
+
+                    <li class="dropdown__item">
+                        <i class='bx bx-bell dropdown__icon' ></i>
+                        <span class="dropdown__name">Noticiations</span>
+                    </li>
+
+                    <li class="dropdown__item">
+                        <i class='bx bx-log-out-circle dropdown__icon'></i>
+                        <span class="dropdown__name">Log Out</span>
+                    </li>
+                    </ul>
+                </div>
+
+            </header> 
+
+            <div class="main">
+                <div class="main-content container">
+
+                    <!-- TITLE --> 
+                    <h1 class="title">
+                        <box-icon class="title__icon" type='solid' name='magic-wand'></box-icon>
+                        <span class="title__text">AI Image Generator</span>
+                    </h1>
+
+                    <div class="form-and-image"> 
+                        <!-- FORM CONTAINER -->
+                        <section class="form-container">
+                            <!-- PROMPT INPUT -->
+                            <textarea class="form-container__prompt-input" id="promptInput" rows="5"
+                                placeholder="Describe your image..."></textarea>
+                            <div class="form-container__dropdown-group">
+                                <!-- DROPDOWN STYLE -->
+                                <select class="form-container__dropdown" id="styleSelect">
+                                    <option value="realistic">Realistic</option>
+                                    <option value="anime">Anime</option>
+                                    <option value="flux-schnell">Flux Schnell</option>
+                                </select>
+                                <!-- DROPDOWN RATIO -->
+                                <select class="form-container__dropdown" id="ratioSelect">
+                                    <option value="1:1">1:1</option>
+                                    <option value="16:9">16:9</option>
+                                    <option value="9:16">9:16</option>
+                                </select>
+                            </div>
+                            <!-- GENERATE IMAGE BUTTON -->
+                            <button class="form-container__button" onclick="generateImage()">
+                                <box-icon type='solid' name='magic-wand'></box-icon>
+                                Generate Image
+                            </button>
+                        </section>
+
+                        <!-- IMAGE CONTAINER -->
+                        <section class="image-container" id="imageContainer">
+                            <!-- IMAGE RESULT -->
+                            <img class="image-container__image-result" id="imageResult" src="img/placeholder.png">
+
+                            <div class="image-container__layer"></div>
+                            <button class="image-container__download-button" onclick="downloadImage()">
+                                <i class='bx  bx-arrow-to-bottom'></i> 
+                            </button>
+
+                            <!-- LOADING CONTAINER -->
+                            <div class="image-container__loading-container">
+                                <svg class="image-container__loading-spinner" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 200 200">
+                                    <radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)">
+                                        <stop offset="0" stop-color="#2356FF"></stop>
+                                        <stop offset=".3" stop-color="#2356FF" stop-opacity=".9"></stop>
+                                        <stop offset=".6" stop-color="#2356FF" stop-opacity=".6"></stop>
+                                        <stop offset=".8" stop-color="#2356FF" stop-opacity=".3"></stop>
+                                        <stop offset="1" stop-color="#2356FF" stop-opacity="0"></stop>
+                                    </radialGradient>
+                                    <circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="20"
+                                        stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100"
+                                        r="70">
+                                        <animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2"
+                                            values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite">
+                                        </animateTransform>
+                                    </circle>
+                                    <circle transform-origin="center" fill="none" opacity=".2" stroke="#2356FF" stroke-width="20"
+                                        stroke-linecap="round" cx="100" cy="100" r="70"></circle>
+                                </svg>
+                                <span class="image-container__loading-text">Generating Image ...</span>
+                            </div>
+            
+                            <!-- ERROR MESSAGE -->
+                            <div class="image-container__error-message" id="errorMessage">
+                                <box-icon type='solid' name='error-circle'></box-icon>
+                                <span class="image-container__error-text" id="errorText">An error occurred while generating the image.</span>
+                            </div>
+                        </section>
+                    </div>
+                    
+                </div> 
+            </div>
+        </main>
+    </body>
+    <!-- MAIN JS -->
+    <script src="js/generate.js"></script>
+</html>

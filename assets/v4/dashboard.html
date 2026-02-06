@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- STYLES CSS -->
+        <link rel="stylesheet" href="css/dashboard.css">
+
+        <!-- BOX ICONS CSS-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <title>Dashboard</title>
+    </head>
+    <body id="body">
+        <div class="l-navbar" id="navbar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <img src="img/logo.svg" alt="" class="nav__logo-icon">
+                        <span class="nav__logo-text">SVF</span>
+                    </a>
+    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+    
+                    <ul class="nav__list">
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-grid-alt nav__icon'></i>
+                            <span class="nav__text">Dashboard</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-image nav__icon' ></i>
+                            <span class="nav__text">Generate</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__text">Account</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bell nav__icon' ></i>
+                            <span class="nav__text">Notifications</span>
+                        </a>                        
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cart nav__icon' ></i>
+                            <span class="nav__text">Buy Credits</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-key nav__icon'></i>
+                            <span class="nav__text">API Keys</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cog nav__icon' ></i>
+                            <span class="nav__text">Settings</span>
+                        </a>                 
+                    </ul>
+                </div>
+                <a href="#" class="nav__link">           
+                    <i class='bx bx-log-out-circle nav__icon'></i>
+                    <span class="nav__text">Log Out</span>
+                </a>
+            </nav>
+        </div>
+        
+        <main>
+            <header>
+                <div class="header__logo">
+                    <i class='bx  bx-menu'></i> 
+                </div>
+
+                <div class="dropdown" id="dropdown-content">
+                    <button class="dropdown__button" id="dropdown-button">
+                    <i class="ri-user-3-line dropdown__icon"></i>
+                    <span class="dropdown__name">My profile</span>
+
+                    <div class="dropdown__icons">
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        <i class="ri-close-line dropdown__close"></i>
+                    </div>
+                    </button>
+
+                    <ul class="dropdown__menu">
+                    <li class="dropdown__item">
+                        <i class='bx bx-user dropdown__icon' ></i>
+                        <span class="dropdown__name">Account</span>
+                    </li>
+
+                    <li class="dropdown__item">
+                        <i class='bx bx-bell dropdown__icon' ></i>
+                        <span class="dropdown__name">Noticiations</span>
+                    </li>
+
+                    <li class="dropdown__item">
+                        <i class='bx bx-log-out-circle dropdown__icon'></i>
+                        <span class="dropdown__name">Log Out</span>
+                    </li>
+                    </ul>
+                </div>
+
+            </header> 
+
+            <div class="content">
+
+                <div class="main">
+                    <div class="header">
+                        <div class="left"> 
+                            <h1>Dashboard</h1>
+                            <ul class="breadcrumb">
+                                <li><a href="#">
+                                        Analytics
+                                    </a></li>
+                                /
+                                <li><a href="#" class="active">Shop</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="report">
+                            <i class='bx bx-image'></i>
+                            <span>Generate Image</span>
+                        </a>
+                    </div>
+
+                    <!-- Insights -->
+                    <ul class="insights">
+                        <li>
+                            <i class='bx bx-images'></i>
+                            <span class="info">
+                                <h3>
+                                    1,074
+                                </h3>
+                                <p>Images Generated</p>
+                            </span>
+                        </li>
+                        <li><i class='bx bx-dollar-circle'></i>
+                            <span class="info">
+                                <h3>
+                                    3,944
+                                </h3>
+                                <p>Credits Purchased</p>
+                            </span>
+                        </li>
+                        <li><i class='bx bx-line-chart'></i>
+                            <span class="info">
+                                <h3>
+                                    14,721
+                                </h3>
+                                <p>Credits Used</p>
+                            </span>
+                        </li>
+                        <li><i class='bx bx-dollar-circle'></i>
+                            <span class="info">
+                                <h3>
+                                    $6,742
+                                </h3>
+                                <p>Credits Remaining</p>
+                            </span>
+                        </li>
+                    </ul>
+                    <!-- End of Insights -->
+
+                    <div class="bottom-data">
+
+                        <div class="orders">
+                            <div class="header">
+                                <!-- <i class='bx bx-receipt'></i> -->
+                                <h3>Recent Images</h3>
+                                <a href="#" class="report">
+                                    <i class='bx bx-image'></i>
+                                    <span>Generate Image</span>
+                                </a>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Date Generated</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="img/profile-1.jpg">
+                                            <p>John Doe</p>
+                                        </td>
+                                        <td>14-08-2023</td>
+                                        <td class="actions">
+                                            <i class="ri-delete-bin-5-line delete"></i>
+                                            <i class="ri-edit-line edit"></i>
+                                            <i class="ri-eye-line view"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="img/profile-1.jpg">
+                                            <p>John Doe</p>
+                                        </td>
+                                        <td>14-08-2023</td>
+                                        <td class="actions">
+                                            <i class="ri-delete-bin-5-line delete"></i>
+                                            <i class="ri-edit-line edit"></i>
+                                            <i class="ri-eye-line view"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="img/profile-1.jpg">
+                                            <p>John Doe</p>
+                                        </td>
+                                        <td>14-08-2023</td>
+                                        <td class="actions">
+                                            <i class="ri-delete-bin-5-line delete"></i>
+                                            <i class="ri-edit-line edit"></i>
+                                            <i class="ri-eye-line view"></i>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <img src="img/profile-1.jpg">
+                                            <p>John Doe</p>
+                                        </td>
+                                        <td>14-08-2023</td>
+                                        <td class="actions">
+                                            <i class="ri-delete-bin-5-line delete"></i>
+                                            <i class="ri-edit-line edit"></i>
+                                            <i class="ri-eye-line view"></i>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Reminders -->
+                        <div class="reminders">
+                            <div class="header">
+                                <!-- <i class='bx bx-note'></i> -->
+                                <h3>Credits </h3>
+                                <i class='bx bx-dots-vertical-rounded'></i>
+                                <!-- <i class='bx bx-filter'></i> -->
+                                <!-- <i class='bx bx-plus'></i> -->
+                            </div>
+
+                            <div class="credits">
+                                <div class="credits-data">
+                                    <i class='bx bx-dollar-circle high'></i>
+                                    <span class="credits__info">
+                                        <h3>
+                                            15 / 20
+                                        </h3>
+                                        <p>Credits Used</p>
+                                    </span>
+                                </div>
+
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="purchase-credits">
+                                <button>
+                                    <i class='bx bx-plus'></i>
+                                    Purchase Credits
+                                </button>
+                            </div>
+                            <!-- <ul class="task-list">
+                                <li class="completed">
+                                    <div class="task-title">
+                                        <i class='bx bx-check-circle'></i>
+                                        <p>Start Our Meeting</p>
+                                    </div>
+                                    <i class='bx bx-dots-vertical-rounded'></i>
+                                </li>
+                                <li class="completed">
+                                    <div class="task-title">
+                                        <i class='bx bx-check-circle'></i>
+                                        <p>Analyse Our Site</p>
+                                    </div>
+                                    <i class='bx bx-dots-vertical-rounded'></i>
+                                </li>
+                                <li class="not-completed">
+                                    <div class="task-title">
+                                        <i class='bx bx-x-circle'></i>
+                                        <p>Play Footbal</p>
+                                    </div>
+                                    <i class='bx bx-dots-vertical-rounded'></i>
+                                </li>
+                            </ul> -->
+                        </div>
+
+                        <!-- End of Reminders-->
+
+                    </div>
+
+                </div>
+            
+            </div>
+
+        </main>
+    </body>
+    <!-- MAIN JS -->
+    <script src="js/dashboard.js"></script>
+</html>

@@ -160,25 +160,16 @@ img {
 }
 
 .btn{
-  display: inline-block;
-  background-color: var(--text-color);
-  color: #fff;
-  padding: .80rem 1.5rem;
-  border-radius: 3rem;
-  transition: .4s;
-}
-.btn:hover{
-  box-shadow: 0 4px 12px hsla(38, 69%, 8%, .2);
+    background-color: var(--text-color);
+    color: #fff;
+    padding: .80rem 1.5rem;
+    border-radius: 3rem;
+    transition: .4s;
 }
 
 .home__button {
   margin-top: 2rem;
   display: inline-block;
-  background-color: var(--text-color);
-  color: #fff;
-  padding: .80rem 1.5rem;
-  border-radius: 3rem;
-  transition: .4s;
 }
 
 .home__button:hover {

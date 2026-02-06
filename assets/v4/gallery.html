@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- STYLES CSS -->
+        <link rel="stylesheet" href="css/gallery.css">
+
+        <!-- BOX ICONS CSS-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <title>Gallery</title>
+    </head>
+    <body id="body">
+        <div class="l-navbar" id="navbar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <img src="img/logo.svg" alt="" class="nav__logo-icon">
+                        <span class="nav__logo-text">SVF</span>
+                    </a>
+    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+    
+                    <ul class="nav__list">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-grid-alt nav__icon'></i>
+                            <span class="nav__text">Dashboard</span>
+                        </a>
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-images nav__icon' ></i>
+                            <span class="nav__text">Gallery</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-image nav__icon' ></i>
+                            <span class="nav__text">Generate</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__text">Account</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bell nav__icon' ></i>
+                            <span class="nav__text">Notifications</span>
+                        </a>                        
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cart nav__icon' ></i>
+                            <span class="nav__text">Buy Credits</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-key nav__icon'></i>
+                            <span class="nav__text">API Keys</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cog nav__icon' ></i>
+                            <span class="nav__text">Settings</span>
+                        </a>                 
+                    </ul>
+                </div>
+                <a href="#" class="nav__link">           
+                    <i class='bx bx-log-out-circle nav__icon'></i>
+                    <span class="nav__text">Log Out</span>
+                </a>
+            </nav>
+        </div>
+        
+        <main>
+            <header>
+                <div class="header__logo">
+                    <i class='bx  bx-menu'></i> 
+                </div>
+
+                <div class="dropdown" id="dropdown-content">
+                    <button class="dropdown__button" id="dropdown-button">
+                    <i class="ri-user-3-line dropdown__icon"></i>
+                    <span class="dropdown__name">My profile</span>
+
+                    <div class="dropdown__icons">
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        <i class="ri-close-line dropdown__close"></i>
+                    </div>
+                    </button>
+
+                    <ul class="dropdown__menu">
+                    <li class="dropdown__item">
+                        <i class='bx bx-user dropdown__icon' ></i>
+                        <span class="dropdown__name">Account</span>
+                    </li>
+
+                    <li class="dropdown__item">
+                        <i class='bx bx-bell dropdown__icon' ></i>
+                        <span class="dropdown__name">Noticiations</span>
+                    </li>
+
+                    <li class="dropdown__item">
+                        <i class='bx bx-log-out-circle dropdown__icon'></i>
+                        <span class="dropdown__name">Log Out</span>
+                    </li>
+                    </ul>
+                </div>
+
+            </header> 
+
+            <div class="main">
+                <div class="main-content container">
+
+                    <!--  *****  Buttons Section Starts  *****  -->
+                    <div class="button-group">
+                        <button class="button active-filter" data-filter="*">All</button>
+                        <button class="button" data-filter=".design">Male</button>
+                        <button class="button" data-filter=".development">Female</button>
+                        <button class="button" data-filter=".logo">Bald</button>
+                        <button class="button" data-filter=".logo">Dark Skin</button>
+                        <button class="button" data-filter=".logo">Light Skin</button>
+                    </div>
+                    <!--  *****  Buttons Section Ends  *****  -->      
+                      
+                    <div class="image-filter">
+                        <input type="search" name="image_filter" id="imageFilter" placeholder="Search" autofocus>
+                    </div>
+
+                    <div class="gallery grid">
+                        
+                        <!--  *****  Card 1 Starts  *****  -->
+                        <div class="item design">
+                            <img src="img/design1.jpg">
+                            <div class="overlay">
+                                <a href="#">
+                                    VIEW MORE
+                                </a>
+
+                            </div>
+                        </div>
+                        <!--  *****  Card 1 Ends  *****  -->
+
+                        <!--  *****  Card 2 Starts  *****  -->
+                        <div class="item design">
+                            <img src="img/design2.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 2 Ends  *****  -->
+
+                        <!--  *****  Card 3 Starts  *****  -->
+                        <div class="item development">
+                            <img src="img/website1.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 3 Ends  *****  -->
+
+                        <!--  *****  Card 4 Starts  *****  -->
+                        <div class="item development">
+                            <img src="img/website2.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 4 Ends  *****  -->
+
+                        <!--  *****  Card 5 Starts  *****  -->
+                        <div class="item development">
+                            <img src="img/website3.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 5 Ends  *****  -->
+
+                        <!--  *****  Card 6 Starts  *****  -->
+                        <div class="item logo">
+                            <img src="img/logo1.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 6 Ends  *****  -->
+
+                        <!--  *****  Card 1 Starts  *****  -->
+                        <div class="item design">
+                            <img src="img/design1.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 1 Ends  *****  -->
+
+                        <!--  *****  Card 2 Starts  *****  -->
+                        <div class="item design">
+                            <img src="img/design2.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 2 Ends  *****  -->
+
+                        <!--  *****  Card 3 Starts  *****  -->
+                        <div class="item development">
+                            <img src="img/website1.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 3 Ends  *****  -->
+
+                        <!--  *****  Card 4 Starts  *****  -->
+                        <div class="item development">
+                            <img src="img/website2.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 4 Ends  *****  -->
+
+                        <!--  *****  Card 5 Starts  *****  -->
+                        <div class="item development">
+                            <img src="img/website3.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 5 Ends  *****  -->
+
+                        <!--  *****  Card 6 Starts  *****  -->
+                        <div class="item logo">
+                            <img src="img/logo1.jpg">
+                            <div class="overlay">
+                                <a href="#">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <!--  *****  Card 6 Ends  *****  -->
+
+                    </div>
+                    <!--  *****  Gallery Section Ends  *****  --> 
+                    
+                </div>
+            </div>
+        </main>
+    </body>
+    <!-- MAIN JS -->
+    <script src="js/gallery.js"></script>
+</html>
