@@ -71,6 +71,18 @@ async def get_generate_image(request: Request):
         } 
     )
 
+@router.get('/gallery', status_code=status.HTTP_200_OK, response_class=HTMLResponse)
+async def get_gallery(request: Request):
+    """Load the gallery page"""
+    logging.info("Loading gallery page")
+    return templates.TemplateResponse(
+        "gallery.html", 
+        {
+            "request": request,
+            "title": "Gallery"
+        } 
+    )
+
 @router.get('/purchase_credits', status_code=status.HTTP_200_OK, response_class=HTMLResponse)
 async def get_purchase_credits(request: Request):
     """Load the purchase credits page"""
