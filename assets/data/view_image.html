@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- STYLES CSS -->
+        <link rel="stylesheet" href="css/view_image.css">
+
+        <!-- BOX ICONS CSS-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+        <title>View Image</title>
+    </head>
+    <body id="body">
+        <div class="l-navbar" id="navbar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <img src="img/logo.svg" alt="" class="nav__logo-icon">
+                        <span class="nav__logo-text">Bedimcode</span>
+                    </a>
+    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+    
+                    <ul class="nav__list">
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-grid-alt nav__icon'></i>
+                            <span class="nav__text">Home</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__text">User</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bell nav__icon' ></i>
+                            <span class="nav__text">Notification</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-heart nav__icon'></i>
+                            <span class="nav__text">Favorites</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon'></i>
+                            <span class="nav__text">Saved</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-message-rounded nav__icon' ></i>
+                            <span class="nav__text">Chat</span>
+                        </a>                 
+                    </ul>
+                </div>
+                <a href="#" class="nav__link">           
+                    <i class='bx bx-log-out-circle nav__icon'></i>
+                    <span class="nav__text">Close</span>
+                </a>
+            </nav>
+        </div>
+        
+        <main>
+            <header>
+                <h1>Dashboard</h1>
+            </header>
+
+            <div class="main">
+                <div class="main-content container">
+                    <!-- TITLE -->
+                    <div class="title">
+                        <div class="image-title">
+                            <box-icon class="title__icon" type='solid' name='magic-wand'></box-icon>
+                            <span class="title__text">Image Viewer</span>
+                        </div>
+
+                        <div class="image-actions">
+                            <i class='bx  bx-dots-vertical-rounded'></i> 
+                        </div>
+                        
+                    </div>
+
+                    <div class="no-images">
+                        <p class="no-images__text">No images to label</p>
+                        <div class="grid">
+                            <!-- EDIT PROMPT BUTTON -->
+                            <button class="form-container__button form-container__button--secondary" onclick="editPrompt()">
+                                <box-icon type='solid' name='edit'></box-icon>
+                                Upload Images
+                            </button>
+
+                            <!-- GENERATE IMAGE BUTTON -->
+                            <button class="form-container__button" onclick="generateImage()">
+                                <box-icon type='solid' name='magic-wand'></box-icon>
+                                Dashboard
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="form-and-image">
+
+                        <!-- IMAGE CONTAINER -->
+                        <section class="image-container" id="imageContainer">
+                            <!-- IMAGE RESULT -->
+                            <img class="image-container__image-result" id="imageResult" src="img/example.jpeg">
+                        </section>
+
+                        <!-- FORM CONTAINER -->
+                        <section class="form-container">
+                            <div class="prompt-container">
+                                <!-- PROMPT INPUT -->
+                                <textarea class="form-container__prompt-input" id="prompt" rows="5"
+                                    placeholder="Describe the face in the image..."></textarea>
+
+                                <button class="prompt-btn" type="button">
+                                    <i class="fa-solid fa-dice"></i>
+                                </button>
+                            </div>
+
+
+                            <div class="tags">
+                                <span class="tag">Bald</span>
+                                <span class="tag">Light Skinned</span>
+                                <span class="tag">Dark hair</span>
+                                <span class="tag">Dark skinned</span>
+                                <span class="tag">Smiling</span>
+                                <span class="tag">Laughing</span>
+                            </div>
+
+                            <div class="form-container__dropdown-group">
+                                <!-- DROPDOWN STYLE -->
+                                <select class="form-container__dropdown" id="dropdownStyles">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <!-- DROPDOWN RATIO -->
+                                <button class="add-tag btn" onclick="editPrompt()">
+                                    <box-icon type='solid' name='edit'></box-icon>
+                                    <i class='bx  bx-plus'></i> 
+                                    Add Tag
+                                </button>
+
+                                <div class="add-tag-modal" id="addTag"> 
+                                    <div class="add-tag-modal__content">
+                                        <div class="tag__header">
+                                            <span>Add Tag</span>
+                                            <button class="add-tag-modal__close" onclick="closeAddTagModal()">
+                                                <i class='bx  bx-x'></i> 
+                                            </button>
+                                        </div>
+                                        <input type="text" id="tagInput" placeholder="Enter a tag">
+                                        <div class="add-tag-actions">
+                                            <button class="add-tag-modal__button btn" onclick="addTag()">
+                                                <i class='bx  bx-plus'></i>
+                                                Add Tag
+                                            </button>
+                                            <button class="add-tag-modal__button btn" onclick="addTag()">
+                                                <i class='bx  bx-x'></i>
+                                                Cancel
+                                            </button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="edit-tag-modal" id="editTag">
+                                    <div class="edit-tag-modal__content">
+                                        <div class="tag__header">
+                                            <span>Edit Tag</span>
+                                            <button class="edit-tag-modal__close" onclick="closeEditTagModal()">
+                                                <i class='bx  bx-x'></i> 
+                                            </button>
+                                        </div>
+                                        <input type="text" id="editTagInput" placeholder="Enter a tag">
+                                        <div class="edit-tag-actions">
+                                            <button class="edit-tag-modal__button btn" onclick="editTag()">
+                                                <i class='bx  bx-save'></i>
+                                                Save Changes
+                                            </button>
+                                            <button class="edit-tag-modal__button btn" onclick="editTag()">
+                                                <i class='bx  bx-x'></i>
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div class="form_actions grid">
+                        <!-- EDIT PROMPT BUTTON -->
+                        <button class="form-container__button form-container__button--secondary" onclick="editPrompt()">
+                            <box-icon type='solid' name='edit'></box-icon>
+                            <i class='bx  bx-image'></i> 
+                            Edit Image
+                        </button>
+
+                        <!-- GENERATE IMAGE BUTTON -->
+                        <button class="form-container__button" onclick="generateImage()">
+                            <box-icon type='solid' name='magic-wand'></box-icon>
+                            <i class='bx  bx-edit-alt'></i> 
+                            Edit Description
+                        </button>
+
+                        <!-- CLEAR IMAGE BUTTON -->
+                        <button class="form-container__button form-container__button--tertiary" onclick="clearImage()">
+                            <box-icon type='solid' name='trash'></box-icon>
+                            <i class='bx  bx-save'></i> 
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </main>
+    </body>
+    <!-- MAIN JS -->
+    <script src="js/view_image.js"></script>
+</html>
